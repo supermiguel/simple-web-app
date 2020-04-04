@@ -1,0 +1,24 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: simple-web-app
+  labels:
+    app: simple-web-app
+spec:
+  containers:
+    - name: simple-web-app
+      image: supermiguel/simple-web-app
+      #args:
+        #  - "-text=apple"
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: simple-web-app
+spec:
+  selector:
+    app: simple-web-app
+  ports:
+    - port: 5000 # Default port for image
