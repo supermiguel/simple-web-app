@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: simple-web-app
+  labels:
+    app: simple-web-app
+spec:
+  containers:
+    - name: simple-web-app
+      image: supermiguel/simple-web-app
+      args:
+        - "apple"
+
