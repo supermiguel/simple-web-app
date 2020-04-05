@@ -13,4 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./app.py" "$FRUIT" ]
+ENTRYPOINT [ "python", "./app.py"]
+CMD ["pear"]
+#CMD [ "python", "./app.py" "$FRUIT" ]
