@@ -3,7 +3,10 @@ FROM python:3
 
 WORKDIR /usr/src/app
 
-ENV FRUIT
+ARG = FRUIT_ARG
+ENV FRUIT = FRUIT_ARG
+
+
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
