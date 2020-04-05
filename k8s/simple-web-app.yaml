@@ -8,8 +8,8 @@ spec:
   containers:
     - name: simple-web-app
       image: supermiguel/simple-web-app
-      #args:
-        #  - "-text=apple"
+      args:
+        - "-FRUIT=apple"
 
 ---
 
@@ -21,4 +21,7 @@ spec:
   selector:
     app: simple-web-app
   ports:
-    - port: 5000 # Default port for image
+    - protocol: TCP
+      port: 80 # Default port for image
+      targetPort: 5000
+  type: LoadBalancer
